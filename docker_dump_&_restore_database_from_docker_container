@@ -1,0 +1,30 @@
+docker dump & restore database from docker container
+
+#dump:
+docker exec -i <container_name> /usr/bin/mongodump --username root --password 80661707 --authenticationDatabase admin --db <db_name> --out /dump
+docker cp <container_name>:/dump ~/Downloads/dump
+
+clean:
+docker exec -it <container_name> /bin/bash
+
+
+##Ensure a user is created first
+use admin
+db.createUser({
+    user: "username",
+	pwd: passwordPrompt(),
+	roles:[{role: "readWrite" , db:"<database_name>"}]})
+
+
+#restore:
+docker cp ~/Downloads/dump <container_name>:/dump
+docker exec -i mongo_db /usr/bin/mongorestore --username root --password 80661707 --authenticationDatabase admin --db test_db /dump_2/test_db
+
+
+clean:
+docker exec -it <container_name> /bin/bash
+
+
+
+
+

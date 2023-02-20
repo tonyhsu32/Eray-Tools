@@ -1,0 +1,12 @@
+# 砍掉 anydesk service.conf
+sudo rm /etc/anydesk/service.conf
+
+
+# 移除 anydesk
+sudo apt remove anydesk
+
+
+# 安裝 anydesk
+https://anydesk.com/zht/downloads/linux
+
+

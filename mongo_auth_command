@@ -1,0 +1,8 @@
+# mongo auth  
+
+# 創建 user
+db.createUser({user: "root", pwd: "80661707", roles:[{role: "userAdminAnyDatabase", db: "admin"}, 
+
+# 驗證                                                            "readWriteAnyDatabase", "dbAdminAnyDatabase"]});
+db.auth("root", "80661707")
+

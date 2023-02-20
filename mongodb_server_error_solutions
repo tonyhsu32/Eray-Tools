@@ -1,0 +1,73 @@
+mongodb 服務器問題(status=1, 2, 6, 14, 48, 100, etc...)
+
+Q1: mongodb /etc/mongod.conf (code=exited, status=1/FAILURE)
+    Process: 31905 ExecStart=/usr/bin/mongod --config /etc/mongod.conf (code=exited, status=1/FAILURE)
+
+Sol: sudo chown -Rc mongodb. /var/lib/mongodb
+     sudo chown -Rc mongodb. /var/log/mongodb
+     sudo systemctl stop mongod
+     sudo systemctl start mongod
+
+
+
+Q2: mongoDB status failed after editing mongo.conf (code-exited, status=2)
+
+Sol: wrong:
+     #security:
+         authorization: "enabled"
+
+     correct:
+     security:
+         authorization: enabled
+
+
+
+Q3: mongodb Main process exited, code=killed, status=6/ABRT 
+    Failed with result 'signal
+
+Sol: When status=6/ABRT, run:
+     sudo mongod --repair --dbpath /var/lib/mongodb
+
+     Then:
+     When status=14/ABRT, run: 
+
+     sudo chown -R mongodb:mongodb /var/lib/mongodb
+
+     sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
+
+
+
+Q4: mongodb (code=exited, status=14) 
+    failed but not any clear errors
+
+Sol: sudo chown -R mongodb:mongodb /var/lib/mongodb
+     sudo chown mongodb:mongodb /tmp/mongodb-27017.sock    
+     sudo service mongod restart
+
+
+
+Q5: mongod.service: main process exited, code=exited, status=48/n/a
+
+Sol: exitCode 48，这个问题一般有几种可能：
+     1.服务被意外关闭（不正确的方式关闭服务）：
+       我们到数据库目录下，发现有个mongodb.lock，lock是什么？锁，有了一把锁，如果之前没有被关闭，自然是无法启动，干掉它！
+     
+       sudo rm -rf /var/lib/mongodb/mongod.lock
+
+     2.日志文件没有权限，我们打开官方教程，按照他的介绍，是需要给日志文件和数据库设置权限的！！！很重要
+      
+       sudo chmod $USER /var/lib/mongodb
+       sudo chmod $USER /var/log/mongodb
+     
+     sudo systemctl restart mongod
+     sudo systemctl status mongod
+
+
+
+Q6: mongod.service: Main process exited, code=exited, status=100/n/a
+
+Sol: sudo chown -R mongodb:mongodb /var/lib/mongodb/*
+
+
+
+

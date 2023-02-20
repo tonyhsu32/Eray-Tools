@@ -1,0 +1,22 @@
+fastmot makefile path Error:
+
+computes: 61
+NVCCFLAGS: -gencode arch=compute_61,code=[sm_61,compute_61]
+
+nvcc -ccbin g++ -I"/usr/local/cuda/include" -I"/usr/include/x86_64-linux-gnu" -I"/usr/local/include" -I"plugin" -gencode arch=compute_61,code=[sm_61,compute_61] -Xcompiler -fPIC -c -o yolo_layer.o yolo_layer.cu
+
+In file included from yolo_layer.cu:1:0:
+yolo_layer.h:9:10: fatal error: NvInfer.h: No such file or directory
+ #include "NvInfer.h"
+          ^~~~~~~~~~~
+compilation terminated.
+Makefile:37: recipe for target 'yolo_layer.o' failed
+make: *** [yolo_layer.o] Error 1
+
+
+MakeFile path replace:
+# INCS and LIBS
+INCS=-I"/usr/local/cuda/include" $(TENSORRT_INCS) -I{"/home/eray/Documents/TensorRT-7.2.3.4/include"} -I"plugin"
+LIBS=-L"/usr/local/cuda/lib64" $(TENSORRT_LIBS) -L{"/home/eray/Documents/TensorRT-7.2.3.4/lib"} -Wl,--start-group -lnvinfer -lnvparsers -lnvinfer_plugin -lcudnn -lcublas -lnvToolsExt -lcudart -lrt -ldl -lpthread -Wl,--end-group
+
+

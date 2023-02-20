@@ -1,0 +1,5 @@
+# docker inspect 
+
+docker inspect -f '{{.Name}} - {{.NetworkSettings.IPAddress }}' $(docker ps -aq)
+
+

@@ -1,0 +1,21 @@
+You can send data to server by two ways:
+1. sftp
+    To use sftp,
+    you can use terminal or filezilla(GUI)
+    for terminal:
+        sftp eray@<server IP>
+
+        cd to where you want to put data
+        use
+            put -r
+        to send folder to server
+
+    for filezilla:
+        uri = sftp://192.168.33.240
+        drag your folder to where you want to put
+
+2. samba
+    uri: smb://192.168.33.240/smb
+    user: eray
+    pwd: 80661707
+

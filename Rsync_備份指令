@@ -1,0 +1,2 @@
+# rsync 從server備份到NAS上 -- 有開最高權限
+rsync -auvzbP --progress /home/eray/Andy/ eray@192.168.133.250::AI影像辨識部門/Andy_backup/Andy/ --port=8730
