@@ -33,8 +33,6 @@
        server_folder = "/home/xxx/projectDB/專案測試.tar.xz"
        ```
    
-   * mongodb_import  
-   * mongo_backend  
    * test_mqtt  
    * frame_to_time  
    * cut_frame
