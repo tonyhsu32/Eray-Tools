@@ -16,8 +16,8 @@ import time
 
 # Define Server parameters 
 HostName = '192.168.33.240'
-UserName = 'eray'
-PassWord = '80661707'
+UserName = 'xxx'
+PassWord = 'xxxxxx'
 Port = 22
 
 
