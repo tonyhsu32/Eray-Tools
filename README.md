@@ -150,7 +150,7 @@
             }
            ```
    
-       4. ***define your parameters and file path:***  
+       4. ***Define your parameters and file path:***  
            ```
            # xml folder path 
              xml_init_path = "/home/xxx/Documents/xml_2_json/20220428_xx/xml"
