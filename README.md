@@ -171,7 +171,17 @@
            #                 'redBox', 'extinguisher', 'extinguisher_error', 'safeDoor_open', 'cardClose', 'personFall', 
            #                 'cones_error', 'capBlue', 'capWhite', 'capGreen', 'cardOpen', 'toolCabinet_open', 'cleaner', 'toolCabinet']
            ```
-           
+       
+       5. ***XML to JSON sample:***  
+          - xml_sample.png  
+          
+              ![XML sample](https://github.com/tonyhsu32/Eray-Tools/blob/main/xml_sample.png)  
+          
+          - xml_2_json_sample.png  
+          
+              ![XML to JSON sample](https://github.com/tonyhsu32/Eray-Tools/blob/main/xml_2_json_sample.png)
+        
+        
    * upload_download  
    Use **paramiko** package, select **SFTP protocol** method to **upload**, **download** and can support **compressed**, **decompressed** file.
      - paramiko使用ssh_改.py  
