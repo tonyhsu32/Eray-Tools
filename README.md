@@ -49,7 +49,7 @@
             <annotation>
                 <folder>pic</folder>
                 <filename>200311_145253_1_F14_P7_LB2_V_25.jpg</filename>
-                <path>\\ERAY-MS-7B53\share2\台積電0420\處理後\巡檢\200311_151028\pic\200311_145253_1_F14_P7_LB2_V_25.jpg</path>
+                <path>\\xx-MS-7B53\share2\xxx_0420\處理後\巡檢\200311_151028\pic\200311_145253_1_F14_P7_LB2_V_25.jpg</path>
                 <source>
                     <database>Unknown</database>
                 </source>
@@ -103,10 +103,10 @@
            ```
            {
                 "id": 3822,
-                "source": "台積電_環境物品",
-                "filename": "\\\\ERAY-MS-7B53\\share2\\台積電0420\\處理後\\巡檢\\200311_151028\\pic\\200311_145253_1_F14_P7_LB2_V_25.jpg",
+                "source": "xxx_環境物品",
+                "filename": "\\\\xx-MS-7B53\\share2\\xxx_0420\\處理後\\巡檢\\200311_151028\\pic\\200311_145253_1_F14_P7_LB2_V_25.jpg",
                 "import_Time": "2022-05-02 22:01:19",
-                "remark": "台積電機器人拍攝的資料",
+                "remark": "xxx機器人拍攝的資料",
                 "size": [
                     "1280",
                     "720",
@@ -160,8 +160,8 @@
            ```
            ######## define required argments ########
            # 來源, (哪個專案 或 哪個公開資料集) and 備註說明
-             project_source = "台積電_事件偵測"    # ["台積電_環境物品", "台積電_事件偵測", "美光消防衣", "台積電_人身上的裝備"]
-             remark_description = "台積電_事件偵測拍攝的資料"     # ["台積電機器人拍攝的資料", "台積電_事件偵測拍攝的資料", "美光消防衣拍攝的資料", "台積電_人身上的裝備拍攝的資料"]
+             project_source = "xxx_事件偵測"    # ["xxx_環境物品", "xxx_事件偵測", "xxx消防衣", "xxx_人身上的裝備"]
+             remark_description = "xxx_事件偵測拍攝的資料"     # ["xxx機器人拍攝的資料", "xxx_事件偵測拍攝的資料", "xxx消防衣拍攝的資料", "xxx_人身上的裝備拍攝的資料"]
 
 
            # 給全部出現樣本 -> 會自動產生負樣本
